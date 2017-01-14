@@ -1,0 +1,99 @@
+//símbolo $ para crear variables
+$color-texto-alternativo: white;
+$tamano-fuente-dia : 100px;
+$color-texto-inactivo : grey;
+$color-primario : #EC364F;
+$tiempo-transicion: 0.3s;
+$color-resaltar: lighten(grey, 30);
+$border-radius: 800px;
+
+@mixin mayusculas {
+ text-transform: uppercase;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: grey;
+}
+
+#partLeft {
+  background-color: $color-primario;
+  color: $color-texto-alternativo;
+  width: 250px;
+}
+
+h1 {
+  font-size: $tamano-fuente-dia;
+      text-align: center;
+    margin: 0;
+
+}
+
+#diaSemana {
+  text-align: center;
+    @include mayusculas;
+}
+
+#events {
+  margin-left: 15px;
+}
+
+#pastEvents {
+  color: $color-texto-inactivo;
+
+}
+
+#container {
+  display: flex;
+  width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+
+#partRight {
+  background-color: white;
+  padding: 20px;
+  width: 500px;
+}
+
+#ano {
+  text-align: right;
+}
+
+
+ul{ display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: $border-radius;
+  transition: background-color $tiempo-transicion;
+
+  &:hover {
+
+background-color: $color-resaltar;
+
+}
+
+}
+
